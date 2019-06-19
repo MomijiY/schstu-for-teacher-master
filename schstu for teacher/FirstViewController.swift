@@ -6,7 +6,6 @@
 //  Copyright © 2019 吉川椛. All rights reserved.
 //
 
-//aaaa
 
 import UIKit
 
@@ -30,6 +29,8 @@ class FirstViewController: UIViewController {
         formatter.dateFormat = "yyyy/MM/dd"
         label.text = formatter.string(from: now)
     }
+    
+    
     
 
     /*

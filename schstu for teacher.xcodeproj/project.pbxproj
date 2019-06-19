@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		565D2302F869E7B969937870 /* Pods_schstu_for_teacherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5BB8A8133885773FF4858 /* Pods_schstu_for_teacherUITests.framework */; };
+		79389E9C22B83CE40061CC79 /* allMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */; };
 		793F82CE22ABDC41004BA37E /* NewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F82CD22ABDC41004BA37E /* NewInfoViewController.swift */; };
 		794BF66F22AE72AE00D8CC40 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF66E22AE72AE00D8CC40 /* TableViewController.swift */; };
 		794BF67122AE807800D8CC40 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF67022AE807800D8CC40 /* FirstViewController.swift */; };
@@ -47,6 +48,7 @@
 		2BD384FAD3274F7FAB05AD5E /* Pods_schstu_for_teacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schstu_for_teacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4158611DF5136052BEFB0484 /* Pods-schstu for teacherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherUITests.release.xcconfig"; path = "Target Support Files/Pods-schstu for teacherUITests/Pods-schstu for teacherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4D686545BB390E2F059DC328 /* Pods-schstu for teacherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherUITests.debug.xcconfig"; path = "Target Support Files/Pods-schstu for teacherUITests/Pods-schstu for teacherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allMemoryViewController.swift; sourceTree = "<group>"; };
 		793F82CD22ABDC41004BA37E /* NewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInfoViewController.swift; sourceTree = "<group>"; };
 		794BF66E22AE72AE00D8CC40 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		794BF67022AE807800D8CC40 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				793F82CD22ABDC41004BA37E /* NewInfoViewController.swift */,
 				794BF66E22AE72AE00D8CC40 /* TableViewController.swift */,
 				794BF67022AE807800D8CC40 /* FirstViewController.swift */,
+				79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */,
 				798F062722758A400048E727 /* Main.storyboard */,
 				798F062A22758A410048E727 /* Assets.xcassets */,
 				798F062C22758A410048E727 /* LaunchScreen.storyboard */,
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A717792276B15F00560C20 /* AddViewController.swift in Sources */,
+				79389E9C22B83CE40061CC79 /* allMemoryViewController.swift in Sources */,
 				794BF66F22AE72AE00D8CC40 /* TableViewController.swift in Sources */,
 				79FF496722A7B9BC00C897C9 /* seeMemoryViewController.swift in Sources */,
 				798F062622758A400048E727 /* ViewController.swift in Sources */,
