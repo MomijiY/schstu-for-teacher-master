@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-//変数の設置
-var TodoKobetsunonakami = [String]()
 
 class AddViewController: ViewController, UITextFieldDelegate{
     

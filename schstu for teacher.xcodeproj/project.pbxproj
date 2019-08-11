@@ -21,6 +21,7 @@
 		798F064422758A420048E727 /* schstu_for_teacherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F064322758A420048E727 /* schstu_for_teacherUITests.swift */; };
 		79A44DC022B6177B005486AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79A44DBF22B6177B005486AC /* GoogleService-Info.plist */; };
 		79A717792276B15F00560C20 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A717782276B15F00560C20 /* AddViewController.swift */; };
+		79B3E97D22E448FF0036DC75 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3E97B22E448FF0036DC75 /* StudentsViewController.swift */; };
 		79FF496722A7B9BC00C897C9 /* seeMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF496622A7B9BC00C897C9 /* seeMemoryViewController.swift */; };
 		ADA4530906166486B4B65F03 /* Pods_schstu_for_teacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD384FAD3274F7FAB05AD5E /* Pods_schstu_for_teacher.framework */; };
 		C5BA27CFD6D0CC1EC4649F96 /* Pods_schstu_for_teacherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C016F31DA4464951A6D27E1 /* Pods_schstu_for_teacherTests.framework */; };
@@ -67,6 +68,7 @@
 		798F064522758A420048E727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79A44DBF22B6177B005486AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79A717782276B15F00560C20 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		79B3E97B22E448FF0036DC75 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		79FF496622A7B9BC00C897C9 /* seeMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seeMemoryViewController.swift; sourceTree = "<group>"; };
 		87B841E3E9D3520CA92263E5 /* Pods-schstu for teacherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherTests.debug.xcconfig"; path = "Target Support Files/Pods-schstu for teacherTests/Pods-schstu for teacherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		98E25DA192BF66886060B8ED /* Pods-schstu for teacherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherTests.release.xcconfig"; path = "Target Support Files/Pods-schstu for teacherTests/Pods-schstu for teacherTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				794BF66E22AE72AE00D8CC40 /* TableViewController.swift */,
 				794BF67022AE807800D8CC40 /* FirstViewController.swift */,
 				79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */,
+				79B3E97B22E448FF0036DC75 /* StudentsViewController.swift */,
 				798F062722758A400048E727 /* Main.storyboard */,
 				798F062A22758A410048E727 /* Assets.xcassets */,
 				798F062C22758A410048E727 /* LaunchScreen.storyboard */,
@@ -410,6 +413,7 @@
 			files = (
 				79A717792276B15F00560C20 /* AddViewController.swift in Sources */,
 				79389E9C22B83CE40061CC79 /* allMemoryViewController.swift in Sources */,
+				79B3E97D22E448FF0036DC75 /* StudentsViewController.swift in Sources */,
 				794BF66F22AE72AE00D8CC40 /* TableViewController.swift in Sources */,
 				79FF496722A7B9BC00C897C9 /* seeMemoryViewController.swift in Sources */,
 				798F062622758A400048E727 /* ViewController.swift in Sources */,

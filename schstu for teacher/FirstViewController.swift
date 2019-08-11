@@ -13,6 +13,8 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
+//    @IBOutlet weak var userLabel: UILabel!
+//    var userName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,20 @@ class FirstViewController: UIViewController {
         
         formatter.dateFormat = "yyyy/MM/dd"
         label.text = formatter.string(from: now)
+        
+    
+//        // ルートはサインアップのViewController
+//        let rootVC = UINavigationController(rootViewController: UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() ?? UIViewController()
+//        )
+//
+//        // サインアップ済みならホームのViewControllerを表示
+//        if UserDefaults.standard.bool(forKey: "appSignUpStatusKey") {
+//            rootVC.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() ?? UIViewController(), animated: false)
+//        }
+//
+////        window?.rootViewController = rootVC
+////        window?.makeKeyAndVisible()
+
     }
     
     

@@ -55,7 +55,7 @@ class seeMemoryViewController: UIViewController, UITextFieldDelegate {
             
             ] as [String:Any]
         
-        database.collection("coment").document("example").setData(coment){ err in
+        database.collection("coment").document("coment").setData(coment){ err in
             if let err = err {
                 print("Error writiing document: \(err)")
             } else {
