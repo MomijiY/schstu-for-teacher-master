@@ -9,8 +9,9 @@ target 'schstu for teacher' do
 pod 'Firebase/Database'
 pod 'Firebase/Core'
 pod 'Firebase/Firestore'
-pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
 
   target 'schstu for teacherTests' do
     inherit! :search_paths

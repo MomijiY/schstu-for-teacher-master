@@ -52,8 +52,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             TodoKobetsunonakami.remove(at: indexPath.row)
+            
+            UserDefaults.standard.set(TodoTextField, forKey: "TodoList")
+            
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            
+            tableView.reloadData()
         }
+        
     }
     
     

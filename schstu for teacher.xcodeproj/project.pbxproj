@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		565D2302F869E7B969937870 /* Pods_schstu_for_teacherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5BB8A8133885773FF4858 /* Pods_schstu_for_teacherUITests.framework */; };
+		79205A6C234879A8006D8BA8 /* sign-uptextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79205A6B234879A8006D8BA8 /* sign-uptextfield.swift */; };
+		79205A6E23489FC6006D8BA8 /* todolist-textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79205A6D23489FC6006D8BA8 /* todolist-textfield.swift */; };
+		79319F932311239F007E1889 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 79319F922311239F007E1889 /* icon.png */; };
 		79389E9C22B83CE40061CC79 /* allMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */; };
+		793912FC2377CE1700C8C8C1 /* makegroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793912FB2377CE1700C8C8C1 /* makegroupViewController.swift */; };
 		793F82CE22ABDC41004BA37E /* NewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F82CD22ABDC41004BA37E /* NewInfoViewController.swift */; };
 		794BF66F22AE72AE00D8CC40 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF66E22AE72AE00D8CC40 /* TableViewController.swift */; };
 		794BF67122AE807800D8CC40 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BF67022AE807800D8CC40 /* FirstViewController.swift */; };
+		7967763F235096CE00463525 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7967763E235096CE00463525 /* Post.swift */; };
+		796776412350986100463525 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796776402350986100463525 /* User.swift */; };
 		798F062422758A400048E727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F062322758A400048E727 /* AppDelegate.swift */; };
 		798F062622758A400048E727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798F062522758A400048E727 /* ViewController.swift */; };
 		798F062922758A400048E727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798F062722758A400048E727 /* Main.storyboard */; };
@@ -22,7 +28,9 @@
 		79A44DC022B6177B005486AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79A44DBF22B6177B005486AC /* GoogleService-Info.plist */; };
 		79A717792276B15F00560C20 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A717782276B15F00560C20 /* AddViewController.swift */; };
 		79B3E97D22E448FF0036DC75 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B3E97B22E448FF0036DC75 /* StudentsViewController.swift */; };
+		79F3DDEB230CB9AE00078C0B /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F3DDEA230CB9AE00078C0B /* AccountViewController.swift */; };
 		79FF496722A7B9BC00C897C9 /* seeMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF496622A7B9BC00C897C9 /* seeMemoryViewController.swift */; };
+		79FF690223122AC3007BEA77 /* first2.001.png in Resources */ = {isa = PBXBuildFile; fileRef = 79FF690123122AC3007BEA77 /* first2.001.png */; };
 		ADA4530906166486B4B65F03 /* Pods_schstu_for_teacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD384FAD3274F7FAB05AD5E /* Pods_schstu_for_teacher.framework */; };
 		C5BA27CFD6D0CC1EC4649F96 /* Pods_schstu_for_teacherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C016F31DA4464951A6D27E1 /* Pods_schstu_for_teacherTests.framework */; };
 /* End PBXBuildFile section */
@@ -49,10 +57,16 @@
 		2BD384FAD3274F7FAB05AD5E /* Pods_schstu_for_teacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schstu_for_teacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4158611DF5136052BEFB0484 /* Pods-schstu for teacherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherUITests.release.xcconfig"; path = "Target Support Files/Pods-schstu for teacherUITests/Pods-schstu for teacherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4D686545BB390E2F059DC328 /* Pods-schstu for teacherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherUITests.debug.xcconfig"; path = "Target Support Files/Pods-schstu for teacherUITests/Pods-schstu for teacherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79205A6B234879A8006D8BA8 /* sign-uptextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sign-uptextfield.swift"; sourceTree = "<group>"; };
+		79205A6D23489FC6006D8BA8 /* todolist-textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "todolist-textfield.swift"; sourceTree = "<group>"; };
+		79319F922311239F007E1889 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../iconteacher/icon.png; sourceTree = "<group>"; };
 		79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allMemoryViewController.swift; sourceTree = "<group>"; };
+		793912FB2377CE1700C8C8C1 /* makegroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makegroupViewController.swift; sourceTree = "<group>"; };
 		793F82CD22ABDC41004BA37E /* NewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInfoViewController.swift; sourceTree = "<group>"; };
 		794BF66E22AE72AE00D8CC40 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		794BF67022AE807800D8CC40 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		7967763E235096CE00463525 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		796776402350986100463525 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		798F062022758A400048E727 /* schstu for teacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "schstu for teacher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		798F062322758A400048E727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		798F062522758A400048E727 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +83,9 @@
 		79A44DBF22B6177B005486AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79A717782276B15F00560C20 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		79B3E97B22E448FF0036DC75 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		79F3DDEA230CB9AE00078C0B /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		79FF496622A7B9BC00C897C9 /* seeMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seeMemoryViewController.swift; sourceTree = "<group>"; };
+		79FF690123122AC3007BEA77 /* first2.001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first2.001.png; path = ../../first2/first2.001.png; sourceTree = "<group>"; };
 		87B841E3E9D3520CA92263E5 /* Pods-schstu for teacherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherTests.debug.xcconfig"; path = "Target Support Files/Pods-schstu for teacherTests/Pods-schstu for teacherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		98E25DA192BF66886060B8ED /* Pods-schstu for teacherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-schstu for teacherTests.release.xcconfig"; path = "Target Support Files/Pods-schstu for teacherTests/Pods-schstu for teacherTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C016F31DA4464951A6D27E1 /* Pods_schstu_for_teacherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schstu_for_teacherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +159,8 @@
 		798F062222758A400048E727 /* schstu for teacher */ = {
 			isa = PBXGroup;
 			children = (
+				79FF690123122AC3007BEA77 /* first2.001.png */,
+				79319F922311239F007E1889 /* icon.png */,
 				798F062322758A400048E727 /* AppDelegate.swift */,
 				798F062522758A400048E727 /* ViewController.swift */,
 				79A717782276B15F00560C20 /* AddViewController.swift */,
@@ -152,6 +170,12 @@
 				794BF67022AE807800D8CC40 /* FirstViewController.swift */,
 				79389E9B22B83CE40061CC79 /* allMemoryViewController.swift */,
 				79B3E97B22E448FF0036DC75 /* StudentsViewController.swift */,
+				79F3DDEA230CB9AE00078C0B /* AccountViewController.swift */,
+				79205A6B234879A8006D8BA8 /* sign-uptextfield.swift */,
+				79205A6D23489FC6006D8BA8 /* todolist-textfield.swift */,
+				7967763E235096CE00463525 /* Post.swift */,
+				796776402350986100463525 /* User.swift */,
+				793912FB2377CE1700C8C8C1 /* makegroupViewController.swift */,
 				798F062722758A400048E727 /* Main.storyboard */,
 				798F062A22758A410048E727 /* Assets.xcassets */,
 				798F062C22758A410048E727 /* LaunchScreen.storyboard */,
@@ -300,7 +324,9 @@
 				798F062E22758A410048E727 /* LaunchScreen.storyboard in Resources */,
 				798F062B22758A410048E727 /* Assets.xcassets in Resources */,
 				79A44DC022B6177B005486AC /* GoogleService-Info.plist in Resources */,
+				79FF690223122AC3007BEA77 /* first2.001.png in Resources */,
 				798F062922758A400048E727 /* Main.storyboard in Resources */,
+				79319F932311239F007E1889 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,10 +439,16 @@
 			files = (
 				79A717792276B15F00560C20 /* AddViewController.swift in Sources */,
 				79389E9C22B83CE40061CC79 /* allMemoryViewController.swift in Sources */,
+				793912FC2377CE1700C8C8C1 /* makegroupViewController.swift in Sources */,
 				79B3E97D22E448FF0036DC75 /* StudentsViewController.swift in Sources */,
 				794BF66F22AE72AE00D8CC40 /* TableViewController.swift in Sources */,
+				7967763F235096CE00463525 /* Post.swift in Sources */,
 				79FF496722A7B9BC00C897C9 /* seeMemoryViewController.swift in Sources */,
+				796776412350986100463525 /* User.swift in Sources */,
 				798F062622758A400048E727 /* ViewController.swift in Sources */,
+				79F3DDEB230CB9AE00078C0B /* AccountViewController.swift in Sources */,
+				79205A6E23489FC6006D8BA8 /* todolist-textfield.swift in Sources */,
+				79205A6C234879A8006D8BA8 /* sign-uptextfield.swift in Sources */,
 				798F062422758A400048E727 /* AppDelegate.swift in Sources */,
 				793F82CE22ABDC41004BA37E /* NewInfoViewController.swift in Sources */,
 				794BF67122AE807800D8CC40 /* FirstViewController.swift in Sources */,
@@ -598,7 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG32J57MBX;
 				INFOPLIST_FILE = "schstu for teacher/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,7 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG32J57MBX;
 				INFOPLIST_FILE = "schstu for teacher/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

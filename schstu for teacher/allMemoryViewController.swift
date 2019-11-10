@@ -26,23 +26,20 @@ class allMemoryViewController: UIViewController {
 
     @IBOutlet weak var pageLabel: UILabel!
     
-    @IBOutlet weak var stuNamelbl: UILabel!
+ 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         database = Firestore.firestore()
         
-        stuNamelbl.text = studentsName
         
-        //生徒名を表示
-        if let stuName = UserDefaults.standard.object(forKey: "StudentsList") {
-            stuNamelbl.text = "\(stuName)"
-        }else{
-            stuNamelbl.text = "読み込めませんでした。"
-        }
         
     }
+    
+
+    
     
     @IBAction func RememoryAc() {
         database.collection("data").document("example").getDocument { (snap, error) in

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+var oshirasenakami = [String]()
 
 class AddViewController: ViewController, UITextFieldDelegate{
     
@@ -23,7 +24,7 @@ class AddViewController: ViewController, UITextFieldDelegate{
         
         database = Firestore.firestore()
         
-        TextView.text = saveData.object(forKey: "Text") as? String
+        TextView.text = saveData.object(forKey: "noti") as? String
         
         let toolBar =  UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
         
@@ -46,18 +47,23 @@ class AddViewController: ViewController, UITextFieldDelegate{
     
     @IBAction func saveMemo() {
         
-        saveData.set(TextView.text, forKey: "Text")
+        saveData.set(TextView.text, forKey: "noti")
 
         let teacher_data = [
-            "text": TextView.text!
+            "noti": TextView.text!
             ] as [String:Any]
 
-        database.collection("teacher_data").document("example").setData(teacher_data){ err in
+        database.collection("teacher_data").document("noti").setData(teacher_data){ err in
             if let err = err {
                 print("Error writiing document: \(err)")
             } else {
                 print("Document successfully wriitten!")
             }
+            
+            oshirasenakami.append(self.TextView.text!)
+            self.TextView.text = ""
+            
+            UserDefaults.standard.set(oshirasenakami, forKey: "Oshiraselist")
         }
         
         let alert: UIAlertController = UIAlertController(title: "OK", message: "メモの保存が完了しました", preferredStyle: .alert)

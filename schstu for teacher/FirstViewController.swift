@@ -8,13 +8,16 @@
 
 
 import UIKit
-
+import Firebase
 
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
-//    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
 //    var userName: String = ""
+    
+    // ユーザー名
+    var userName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,18 @@ class FirstViewController: UIViewController {
         
         formatter.dateFormat = "yyyy/MM/dd"
         label.text = formatter.string(from: now)
+        
+        // ユーザー名を表示
+        userLabel.text = userName
+        
+        // ユーザー名を表示
+        if let userName = UserDefaults.standard.string(forKey: "userNameKey") {
+            userLabel.text = "\(userName)先生こんにちは。"
+        } else {
+            userLabel.text = "読み込めなかった時"
+        }
+        
+ 
         
     
 //        // ルートはサインアップのViewController

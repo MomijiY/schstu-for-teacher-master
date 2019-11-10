@@ -1,39 +1,34 @@
 //
-//  seeMemoryViewController.swift
+//  makegroupViewController.swift
 //  schstu for teacher
 //
-//  Created by 吉川椛 on 2019/06/05.
+//  Created by 吉川椛 on 2019/11/10.
 //  Copyright © 2019 吉川椛. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class seeMemoryViewController: UIViewController, UITextViewDelegate {
+class makegroupViewController: UIViewController, UITextFieldDelegate {
     
-    
-    @IBOutlet weak var contentTextView: UITextView!
-
+    @IBOutlet weak var groupNameTextField: UITextField!
+    @IBOutlet weak var groupPasswordTextField: UITextField!
     
     var database: Firestore!
     
     var saveData: UserDefaults = UserDefaults.standard
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        contentTextView.text = "coment"
-        contentTextView.delegate = self
-        contentTextView.textColor = UIColor.black
-        
+
+        groupNameTextField.text = "groupname"
+        groupNameTextField.delegate = self
+        groupNameTextField.textColor = UIColor.black
         
         database = Firestore.firestore()
         
-
-        contentTextView.text = saveData.object(forKey: "content") as? String
- 
+        groupNameTextField.text = saveData.object(forKey: "groupname") as? String
+        
         let toolBar =  UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
         
         toolBar.barStyle = UIBarStyle.default
@@ -42,11 +37,12 @@ class seeMemoryViewController: UIViewController, UITextViewDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
         
-        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(seeMemoryViewController.commitButtonTapped))
+        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(makegroupViewController.commitButtonTapped))
         
         toolBar.items = [spacer, commitButton]
         
-        contentTextView.inputAccessoryView = toolBar
+        groupNameTextField.inputAccessoryView = toolBar
+        // Do any additional setup after loading the view.
     }
     
     @objc func commitButtonTapped() {
@@ -54,16 +50,11 @@ class seeMemoryViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func MemorySave() {
-
-        saveData.set(contentTextView.text, forKey: "content")
+        saveData.set(groupNameTextField.text, forKey: "")
         
-        let coment = [
-            "text": contentTextView.text!
-
-            
-            ] as [String:Any]
+        let groupname = ["groupname": groupNameTextField.text] as [String:Any]
         
-        database.collection("coment").document("coment").setData(coment){ err in
+        database.collection("groupname").document("groupname").setData(groupname){ err in
             if let err = err {
                 print("Error writiing document: \(err)")
             } else {
@@ -72,8 +63,8 @@ class seeMemoryViewController: UIViewController, UITextViewDelegate {
         }
         
         let alert: UIAlertController = UIAlertController(
-            title: "保存完了",
-            message: "生徒に対してのコメントの保存が完了しました。",
+            title: "グループ作成",
+            message: "グループの作成が完了しました",
             preferredStyle: .alert)
         
         alert.addAction(
@@ -88,26 +79,19 @@ class seeMemoryViewController: UIViewController, UITextViewDelegate {
         )
         present(alert, animated: true, completion: nil)
         
-
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if groupNameTextField.text == "groupname"{
+            groupNameTextField.textColor = UIColor.black
+            groupNameTextField.returnKeyType = .done
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        groupNameTextField.resignFirstResponder()
         return  true
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if contentTextView.text == "coment"{
-            contentTextView.textColor = UIColor.black
-            contentTextView.returnKeyType = .done
-        }
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n"{
-            contentTextView.resignFirstResponder()
-        }
-        return true
     }
     
 
@@ -122,3 +106,4 @@ class seeMemoryViewController: UIViewController, UITextViewDelegate {
     */
 
 }
+

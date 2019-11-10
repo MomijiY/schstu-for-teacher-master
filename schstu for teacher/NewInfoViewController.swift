@@ -8,34 +8,72 @@
 
 import UIKit
 
-class NewInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class NewInfoViewController: UIViewController  {
     
-    @IBOutlet var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-    var oshiraseNameArray = [String]()
+    var oshirasenakami = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        table.dataSource = self
-        table.delegate = self
-        oshiraseNameArray = ["お知らせ１", "お知らせ2", "お知らせ3", "お知らせ4",  "お知らせ5", "お知らせ6", "お知らせ7"]
+        if let noties = UserDefaults.standard.object(forKey: "Oshiraselist") as? [String] {
+            oshirasenakami = noties
+        }
     }
     
+    //追加ボタンの設定
+    @IBAction func TodoAddButten(_ sender: Any) {
+        //変数に入力内容を入れる
+        oshirasenakami.append("Todo\(oshirasenakami.count)")
+        
+        //変数の中身をUDに追加
+        UserDefaults.standard.set(oshirasenakami, forKey: "Oshiraselist" )
+        
+        // tableViewのリロードがなかった
+        tableView.reloadData()
+    }
+    
+    //cancelボタンの設定
+    @IBAction func CancelButton(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
+}
+
+extension NewInfoViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return oshiraseNameArray.count
+        return oshirasenakami.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        let noticell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UITableViewCell
         
-        cell?.textLabel?.text = oshiraseNameArray[indexPath.row]
         
-        return cell!
+        noticell.textLabel?.text = oshirasenakami[indexPath.row]
+        
+        return noticell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            oshirasenakami.remove(at: indexPath.row)
+            
+            UserDefaults.standard.set(oshirasenakami, forKey: "Oshiraselist")
+            
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(oshiraseNameArray[indexPath.row])が選ばれました！")
+        
+        // 別の画面に遷移
+        performSegue(withIdentifier: "Tomemory", sender: nil)
     }
-    
 }

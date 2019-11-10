@@ -10,7 +10,7 @@ import UIKit
 
 var Studentsnonakami = [String]()
 
-class StudentsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class StudentsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -43,6 +43,8 @@ class StudentsViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            tableView.reloadData()
+            
         }
     }
 
@@ -56,6 +58,15 @@ class StudentsViewController: UIViewController,UITableViewDelegate,UITableViewDa
         UserDefaults.standard.set( Studentsnonakami, forKey: "StudentsList" )
         
         tableView.reloadData()
+        
+        //キーボードを閉じる
+        textField.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func cancelbtn(_ sender: Any) {
@@ -113,19 +124,63 @@ class StudentsViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textField.delegate = self
+        tableView.isEditing = true
+        tableView.allowsSelectionDuringEditing = true
+        
         if let students = UserDefaults.standard.object(forKey: "StudentsList") as? [String] {
             Studentsnonakami = students
         }
+        
+        tableView.isEditing = true
+        tableView.isScrollEnabled = false
 //        //追加画面で入力した内容を取得する
 //        if UserDefaults.standard.object(forKey: "StudentsList") != nil {
 //            studentsnonakami = UserDefaults.standard.object(forKey: "StudentsList") as! [String]
 //        }
     }
     
+  
+    //並べ替え可能にするメソッド。
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //並べ替え結果を処理するメソッド。
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // TODO: 入れ替え時の処理を実装する（データ制御など）
+        if let targetTitle:String = Studentsnonakami[sourceIndexPath.row] {
+            //元の位置のデータを配列から削除
+            Studentsnonakami.remove(at:sourceIndexPath.row)
+            //移動先の位置にデータを配列に挿入
+            Studentsnonakami.insert(targetTitle, at: destinationIndexPath.row)
+        }
+        //テーブルビューをリロードする。
+        tableView.reloadData()
+    }
+    
+    //編集状態の見た目を編集する。
+    //左側の＋やーを表示
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete //表示させる。
+    }
+    //編集モード時に左にずれるか。
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false //ずれない。
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // セルの選択を解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // 別の画面に遷移
+        performSegue(withIdentifier: "Tomemory", sender: nil)
+    }
+    
     //最初からあるコード
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 }
 
