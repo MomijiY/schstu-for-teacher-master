@@ -11,9 +11,9 @@
         <!--Makegroup View Controller-->
         <scene sceneID="cFe-90-dOt">
             <objects>
-                <viewController id="JQa-YC-HRY" customClass="makegroupViewController" customModule="schstu_for_teacher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="JQa-YC-HRY" customClass="makegroupViewController" customModule="schstu_for_teacher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCT-O2-Ms0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="グループを作る" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uH-EC-ySc">
@@ -66,8 +66,8 @@
                         <viewLayoutGuide key="safeArea" id="IUV-lt-0Z6"/>
                     </view>
                     <connections>
-                        <outlet property="groupNameTextField" destination="vvz-A4-VDR" id="dRJ-T0-Shq"/>
-                        <outlet property="groupPasswordTextField" destination="9wQ-5b-Lh1" id="klY-Wh-X1q"/>
+                        <outlet property="groupnametextfield" destination="vvz-A4-VDR" id="79w-u7-ucY"/>
+                        <outlet property="grouppasswordtextfield" destination="9wQ-5b-Lh1" id="zex-1X-F2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFH-aa-0bm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -77,9 +77,9 @@
         <!--View Controller-->
         <scene sceneID="jMT-so-o0F">
             <objects>
-                <viewController id="qaz-Hi-SFC" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="qaz-Hi-SFC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wM1-51-s92">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Lik-Pj-nAd"/>
@@ -819,9 +819,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ZqD-hM-zD7"/>
         <segue reference="lqg-1k-loB"/>
         <segue reference="emz-pM-feh"/>
         <segue reference="Wql-Eg-fwA"/>
-        <segue reference="OcH-TR-3sX"/>
+        <segue reference="idE-2i-zju"/>
     </inferredMetricsTieBreakers>
 </document>

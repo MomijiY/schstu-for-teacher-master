@@ -11,24 +11,48 @@ import Firebase
 
 class makegroupViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var groupNameTextField: UITextField!
-    @IBOutlet weak var groupPasswordTextField: UITextField!
+    
+    @IBOutlet weak var groupnametextfield: UITextField!
+    @IBOutlet weak var grouppasswordtextfield: UITextField!
+
     
     var database: Firestore!
     
     var saveData: UserDefaults = UserDefaults.standard
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        groupNameTextField.text = "groupname"
-        groupNameTextField.delegate = self
-        groupNameTextField.textColor = UIColor.black
+        
+        groupnametextfield.text = "coment"
+        groupnametextfield.delegate = self
+        groupnametextfield.textColor = UIColor.black
+        
+        Firestore.firestore().collection("group").document("groupname").getDocument { (snap, error) in
+            if let error = error {
+                fatalError("\(error)")
+            }
+            guard let data = snap?.data() else { return }
+            print(data)
+        }
+        
+        Firestore.firestore().collection("group").document("grouppassword").getDocument{ (snap, error) in
+            if let error = error {
+                fatalError("\(error)")
+            }
+            guard let data = snap?.data() else { return }
+            print(data)
+            
+        }
+        
         
         database = Firestore.firestore()
         
-        groupNameTextField.text = saveData.object(forKey: "groupname") as? String
-        
+
+        groupnametextfield.text = saveData.object(forKey: "name") as? String
+        grouppasswordtextfield.text = saveData.object(forKey: "password") as? String
+ 
         let toolBar =  UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
         
         toolBar.barStyle = UIBarStyle.default
@@ -37,12 +61,12 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
         
-        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(makegroupViewController.commitButtonTapped))
+        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(seeMemoryViewController.commitButtonTapped))
         
         toolBar.items = [spacer, commitButton]
         
-        groupNameTextField.inputAccessoryView = toolBar
-        // Do any additional setup after loading the view.
+        groupnametextfield.inputAccessoryView = toolBar
+        grouppasswordtextfield.inputAccessoryView = toolBar
     }
     
     @objc func commitButtonTapped() {
@@ -50,11 +74,29 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func MemorySave() {
-        saveData.set(groupNameTextField.text, forKey: "")
+
+        saveData.set(groupnametextfield.text, forKey: "name")
+        saveData.set(grouppasswordtextfield.text, forKey: "password")
         
-        let groupname = ["groupname": groupNameTextField.text] as [String:Any]
+        let coment = [
+            "text": groupnametextfield.text!
+
+            
+            ] as [String:Any]
         
-        database.collection("groupname").document("groupname").setData(groupname){ err in
+        let password = [
+            "password": grouppasswordtextfield.text!
+        ] as [String:Any]
+        
+        database.collection("group").document("groupname").setData(coment){ err in
+            if let err = err {
+                print("Error writiing document: \(err)")
+            } else {
+                print("Document successfully wriitten!")
+            }
+        }
+        
+        database.collection("group").document("grouppassword").setData(password){ err in
             if let err = err {
                 print("Error writiing document: \(err)")
             } else {
@@ -63,8 +105,8 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
         }
         
         let alert: UIAlertController = UIAlertController(
-            title: "グループ作成",
-            message: "グループの作成が完了しました",
+            title: "保存完了",
+            message: "生徒に対してのコメントの保存が完了しました。",
             preferredStyle: .alert)
         
         alert.addAction(
@@ -79,19 +121,32 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
         )
         present(alert, animated: true, completion: nil)
         
-        
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if groupNameTextField.text == "groupname"{
-            groupNameTextField.textColor = UIColor.black
-            groupNameTextField.returnKeyType = .done
-        }
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        groupNameTextField.resignFirstResponder()
+        groupnametextfield.resignFirstResponder()
+        grouppasswordtextfield.resignFirstResponder()
         return  true
+    }
+    
+    private func textViewDidBeginEditing(_ textView: UITextView) {
+        if groupnametextfield.text == "coment"{
+            groupnametextfield.textColor = UIColor.black
+            groupnametextfield.returnKeyType = .done
+        }
+        if grouppasswordtextfield.text == "password" {
+            grouppasswordtextfield.textColor = UIColor.black
+            grouppasswordtextfield.returnKeyType = .done
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"{
+            groupnametextfield.resignFirstResponder()
+            grouppasswordtextfield.resignFirstResponder()
+        }
+        return true
     }
     
 
@@ -106,4 +161,3 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
     */
 
 }
-
