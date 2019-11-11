@@ -47,7 +47,7 @@ class AddViewController: ViewController, UITextFieldDelegate{
     
     @IBAction func saveMemo() {
         
-        saveData.set(TextView.text, forKey: "noti")
+        
 
         let teacher_data = [
             "noti": TextView.text!
@@ -66,7 +66,7 @@ class AddViewController: ViewController, UITextFieldDelegate{
             UserDefaults.standard.set(oshirasenakami, forKey: "Oshiraselist")
         }
         
-        let alert: UIAlertController = UIAlertController(title: "OK", message: "メモの保存が完了しました", preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: "OK", message: "お知らせが完了しました。", preferredStyle: .alert)
         
         alert.addAction(
             UIAlertAction(title: "OK", style: .default, handler: { action in

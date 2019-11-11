@@ -73,7 +73,7 @@ class seeMemoryViewController: UIViewController, UITextViewDelegate {
         
         let alert: UIAlertController = UIAlertController(
             title: "保存完了",
-            message: "生徒に対してのコメントの保存が完了しました。",
+            message: "生徒に対してのコメントが完了しました。",
             preferredStyle: .alert)
         
         alert.addAction(

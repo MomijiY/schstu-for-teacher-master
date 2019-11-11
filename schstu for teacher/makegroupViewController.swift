@@ -25,7 +25,7 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groupnametextfield.text = "coment"
+        groupnametextfield.text = "grname"
         groupnametextfield.delegate = self
         groupnametextfield.textColor = UIColor.black
         
@@ -78,7 +78,7 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
         saveData.set(groupnametextfield.text, forKey: "name")
         saveData.set(grouppasswordtextfield.text, forKey: "password")
         
-        let coment = [
+        let grname = [
             "text": groupnametextfield.text!
 
             
@@ -88,7 +88,7 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
             "password": grouppasswordtextfield.text!
         ] as [String:Any]
         
-        database.collection("group").document("groupname").setData(coment){ err in
+        database.collection("group").document("groupname").setData(grname){ err in
             if let err = err {
                 print("Error writiing document: \(err)")
             } else {
@@ -105,8 +105,8 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
         }
         
         let alert: UIAlertController = UIAlertController(
-            title: "保存完了",
-            message: "生徒に対してのコメントの保存が完了しました。",
+            title: "グループ作成完了",
+            message: "グループを作れました。",
             preferredStyle: .alert)
         
         alert.addAction(
@@ -131,7 +131,7 @@ class makegroupViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func textViewDidBeginEditing(_ textView: UITextView) {
-        if groupnametextfield.text == "coment"{
+        if groupnametextfield.text == "grname"{
             groupnametextfield.textColor = UIColor.black
             groupnametextfield.returnKeyType = .done
         }
